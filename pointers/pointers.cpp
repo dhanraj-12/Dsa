@@ -5,6 +5,8 @@ int main() {
 
     int num = 5;
     int *ptr = &num;
+
+    cout << endl;
     cout << "addressof num block stored in ptr --> " << ptr << endl;
     cout << "value of num block pointed by ptr -->" << *ptr << endl;
     cout << "address of ptr block --> " << &ptr << endl;
