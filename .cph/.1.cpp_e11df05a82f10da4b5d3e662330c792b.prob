@@ -1,0 +1,1 @@
+{"name":"Local: 1","url":"/home/dj/drive/c++_DSA/1.cpp","tests":[{"id":1723903071796,"input":"1\n5 3\n1 2 3 4 5\n1 3 2\n2 4 2\n3 5 4","output":"YES\nNO\nYES\n"},{"id":1723903085353,"input":"3\n11\n9\n8","output":"2\n9\n8\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dj/drive/c++_DSA/1.cpp","group":"local","local":true}

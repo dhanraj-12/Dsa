@@ -8,7 +8,7 @@ using namespace std;
 #define vll vector<long long>
 #define mii map<int, int>
 #define si set<int>
-#define sc set<char>
+#define sca set<char>
 #define dj main 
 #define all(x) (x).begin(), (x).end()
 int dj() {

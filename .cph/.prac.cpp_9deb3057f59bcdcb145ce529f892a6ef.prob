@@ -1,0 +1,1 @@
+{"name":"Local: prac","url":"/home/dj/drive/c++_DSA/prac.cpp","tests":[{"id":1726671821145,"input":"4\n294 40\n10 598\n0 0\n299 678","output":"5\n18\n47\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dj/drive/c++_DSA/prac.cpp","group":"local","local":true}
