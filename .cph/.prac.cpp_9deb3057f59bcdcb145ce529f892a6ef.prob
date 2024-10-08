@@ -1,1 +1,1 @@
-{"name":"Local: prac","url":"/home/dj/drive/c++_DSA/prac.cpp","tests":[{"id":1726671821145,"input":"4\n294 40\n10 598\n0 0\n299 678","output":"5\n18\n47\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dj/drive/c++_DSA/prac.cpp","group":"local","local":true}
+{"name":"Local: prac","url":"/home/dj/drive/c++_DSA/prac.cpp","tests":[{"id":1726671821145,"input":"3\n3\n1 0 1\n4\n0 1 0 0\n3\n1 1 1","output":"3\n1\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dj/drive/c++_DSA/prac.cpp","group":"local","local":true}

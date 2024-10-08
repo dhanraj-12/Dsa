@@ -14,22 +14,30 @@ using namespace std;
 int dj() {
     int t;
     cin >> t;
-    string a = to_string(t);
-    unordered_map<char,int> mp;
-    for(int i = 0; i<a.size(); i++) {
-        mp[a[i]]++;
-    }
-    bool flag = false;
-    if(mp['4'] == mp['7']) {;
-        cout << a << endl;
-        flag = true;
-    }else{
-        int a = mp['4'];
-        int b = mp['7'];
-        
-    }
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++) {
+            cin >> arr[i];
+        }
 
+        unordered_map<int,int> mp;
+        for(int i = 0; i<n-1; i++) {
+            for(int j = i+1; j<n; j++) {
+                int a = arr[i];
+                int b = arr[j];
 
+                int sum = a+b;
+                int diff = abs(a-b);
+                for(int d = diff+1; d<=sum-1; d++) {
+                    mp[d]++;
+                }
+            }
+        }
+
+        cout << mp.size() << endl;
+    }
 
     return 0;
 }
