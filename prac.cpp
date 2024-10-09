@@ -1,65 +1,53 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 #define int long long int
 #define pii pair<int, int>
 #define pll pair<long long, long long>
-#define vi vector<int>
-#define vll vector<long long>
-#define mii map<int, int>
-#define si set<int>
-#define sca set<char>
+#define vi vector<int>              
 #define dj main 
 #define all(x) (x).begin(), (x).end()
+void inputv(vector<int> &v, int n) {
+    for(int i = 0; i<n; i++) {
+        cin >> v[i];
+    }
+}
+void printv(vector<int> &v) {
+    for(int i = 0; i<v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+void solve();
+
 int32_t dj() {
+    ios::sync_with_stdio(false);
     int t;
     cin >> t;
     while(t--) {
-    int n;
-     cin >> n;
-     vector<int> arr(n);
-     int one = 0;
-     int zero = 0;
-     for(int i = 0; i<n; i++) {
-        cin >> arr[i];
-        if(arr[i] == 0) {
-            zero++;
-        }else {
-            one++;
-        }
-     }
-
-     int ans = one;
-    //  int r = 0, l = 0;
-     for(int i = 2; i<=n; i++) {
-        int r = 0, l = 0;
-        int a = 0;
-        int b = 0;
-        while(r<n) {
-            if(arr[r] == 0) {
-                a++;
-            }else{
-                b++;
-            }
-
-
-            if(r-l+1 == i) {
-                if(b > a){
-                    ans++;
-                }
-                if(arr[l]==0) {
-                    a--;
-                }else {
-                    b--;
-                }
-                l++;
-            }
-            r++;
-        }
-     }
-
-     cout << ans << endl;
-
-     }
+        solve();
+    }
     return 0;
+}
+
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    for(int i = 0; i<m; i++) {
+        if(i%2){
+            a = 2;
+            b = 3;
+        }else{
+            a = 3;
+            b = 2;
+        }
+        for(int j = 0; j<n; j++) {
+            if(j%2) {
+                cout << a << " ";
+            }else{
+                cout << b << " ";
+            }
+        }
+        cout << endl;
+    }
 }

@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void simplesieve(int n) {
+vector<int> simplesieve(int n) {
         vector<bool> prime(n+1,true);
         int count = 0;
         prime[0] = prime[1] = false;
@@ -12,22 +12,24 @@ void simplesieve(int n) {
             }
         }
     }
-
+    vector<int> ans;
     for (int p = 2; p <= n; p++)
         if (prime[p]){
-            cout << p << " ";
+            ans.push_back(p);
             count++;
         }
-            cout << endl;
-            cout << endl;
-   cout << count << endl;
+            
+   return ans;;
 
 }
 int main() {
 
     int n;
     cin>> n;
-    simplesieve(n);
+    vector<int> v = simplesieve(n);
+    for(auto x : v) {
+        cout << x << " ";
+    }
 
 
     return 0;
