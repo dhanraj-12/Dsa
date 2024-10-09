@@ -1,30 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-#define ll long long
+#define int long long int
 #define pii pair<int, int>
 #define pll pair<long long, long long>
-#define vi vector<int>
-#define vll vector<long long>
-#define mii map<int, int>
-#define si set<int>
-#define sca set<char>              
+#define vi vector<int>              
 #define dj main 
 #define all(x) (x).begin(), (x).end()
-void inputv(const vector<int> &v, int n) {
+void inputv(vector<int> &v, int n) {
     for(int i = 0; i<n; i++) {
         cin >> v[i];
     }
 }
-int dj() {
+void printv(vector<int> &v) {
+    for(int i = 0; i<v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+void solve();
+
+int32_t dj() {
     int t;
     cin >> t;
     while(t--) {
-        int n;
+        solve();
+    }
+    return 0;
+}
+
+void solve() {
+    int n;
         cin >> n;
         vector<int> v(n);
         inputv(v,n);
-
-    }
-    return 0;
+        printv(v);
 }

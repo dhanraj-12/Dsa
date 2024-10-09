@@ -8,36 +8,33 @@ using namespace std;
 #define vll vector<long long>
 #define mii map<int, int>
 #define si set<int>
-#define sca set<char>
+#define sca set<char>              
 #define dj main 
 #define all(x) (x).begin(), (x).end()
+// void inputv(const vector<int> &v(n)) {
+//     for(int i = 0; i<n; i++) {
+//         cin >> v[i];
+//     }
+// }
 int dj() {
     int t;
     cin >> t;
     while(t--) {
-        int n;
-        cin >> n;
-        vector<int> arr(n);
-        for(int i=0; i<n; i++) {
-            cin >> arr[i];
+        int n,x;
+        cin >> n >> x;
+        vector<int> v(n);
+        for(int i = 0; i<n; i++) {
+            cin >> v[i];
+        }
+        int a = max(INT_MIN,v[0]);
+        for(int i = 1; i<n; i++) {
+            a = max(a,v[i]-v[i-1]);
         }
 
-        unordered_map<int,int> mp;
-        for(int i = 0; i<n-1; i++) {
-            for(int j = i+1; j<n; j++) {
-                int a = arr[i];
-                int b = arr[j];
+        int b = (x-v[n-1])*2;
 
-                int sum = a+b;
-                int diff = abs(a-b);
-                for(int d = diff+1; d<=sum-1; d++) {
-                    mp[d]++;
-                }
-            }
-        }
+        cout << max(a,b) << endl;
 
-        cout << mp.size() << endl;
     }
-
     return 0;
 }
