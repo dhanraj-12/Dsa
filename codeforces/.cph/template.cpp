@@ -21,6 +21,7 @@ void printv(vector<int> &v) {
 void solve();
 
 int32_t dj() {
+    ios::sync_with_stdio(false);
     int t;
     cin >> t;
     while(t--) {
@@ -31,8 +32,6 @@ int32_t dj() {
 
 void solve() {
     int n;
-        cin >> n;
-        vector<int> v(n);
-        inputv(v,n);
-        printv(v);
+    cin >> n;
+
 }
