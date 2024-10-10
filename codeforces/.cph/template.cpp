@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+const int N = 1000000;
+bool sieve[N+1];
 #define int long long int
 #define pii pair<int, int>
 #define pll pair<long long, long long>
@@ -19,27 +21,30 @@ void printv(vector<int> &v) {
     cout << endl;
 }
 
-vector<int> simplesieve(int n) {
-        vector<bool> prime(n+1,true);
-        int count = 0;
-        prime[0] = prime[1] = false;
-    for(int i = 2; i*i <= n; i++) {
-        if(prime[i] == true) {
-            for(int j = i*i; j <= n; j += i) {
-                prime[j] = false;
+void createsieve() {
+    for(int i = 2; i<=N; i++) {
+        sieve[i] = true;
+    }
+    for(int i = 2; i*i<=N; i++) {
+        if(sieve[i]==true) {
+            for(int j = i*i; j<=N; j += i) {
+                sieve[j]=false;
             }
         }
-    }
-    vector<int> ans;
-    for (int p = 2; p <= n; p++)
-        if (prime[p]){
-            ans.push_back(p);
-            count++;
-        }
-            
-   return ans;;
-
+    } 
 }
+
+vector<int> generatePrime(int n) {
+    vector<int> ans;
+    for(int i = 2; i<=N; i++) {
+        if(sieve[i] == true) {
+            ans.push_back(i);
+        }
+    }
+    return ans;
+}
+
+
 
 void solve();
 
@@ -54,8 +59,5 @@ int32_t dj() {
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    
 
 }
