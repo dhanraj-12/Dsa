@@ -1,78 +1,55 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void simplesieve(int n, vector<int>&Prime) {
-        vector<bool> prime(n+1,true);
-        int count = 0;
-
-    for(int i = 2; i*i <= n; i++) {
-        if(prime[i] == true) {
-            for(int j = i*i; j <= n; j += i) {
-                prime[j] = false;
+const int N = 1000000;
+bool sieve[N+1];
+void createsieve() {
+    for(int i = 2; i<=N; i++) {
+        sieve[i] = true;
+    }
+    for(int i = 2; i*i<=N; i++) {
+        if(sieve[i]==true) {
+            for(int j = i*i; j<=N; j += i) {
+                sieve[j]=false;
             }
         }
-    }
-
-    for (int p = 2; p <= n; p++)
-        if (prime[p]){
-            Prime.push_back(p);
-            cout << p << " ";
-            count++;
-        }
-//             cout << endl;
-//             cout << endl;
-//    cout << count << endl;
-
+    } 
 }
 
-
-void segmented_sieve(int n) {
-    int limit = floor(sqrt(n)) +1;
-    vector<int> prime;
-    prime.reserve(limit);
-    simplesieve(limit,prime);   
-
-    int low = limit;
-    int high = 2*limit;
-
-    while(low<n) {
-        if(high>=n) {
-            high = n;
+vector<int> generatePrime(int n) {
+    vector<int> ans;
+    for(int i = 2; i<=N; i++) {
+        if(sieve[i] == true) {
+            ans.push_back(i);
         }
-
-        vector<bool> isPrime(high-low+1,true);
-
-        for(int i = 0; i<prime.size(); i++) {
-            
-            int firstmultiple = (low/prime[i]) * prime[i];
-            if(firstmultiple<low) {
-                firstmultiple += prime[i];
-            }
-
-                for(int j = firstmultiple; j<high; j +=prime[i]){
-                    isPrime[j-low] = false;
-                }
-        }
-
-                for(int i = low; i<high; i++) {
-                    if(isPrime[i-low]) {
-                        cout << i << " ";
-                    }
-                }
-
-        low = low + limit;
-        high = high + limit;
-
     }
+    return ans;
 }
+
 
 int main() {
+    createsieve();
+    int t;
+    cin >> t;
+    int l,r;
+    cin >> l >> r;
+    vector<int> prime = generatePrime(sqrt(r));
 
-    int n;
-    cin >> n;
-    segmented_sieve(n);
-    
+    vector<int> dummy(r-l+1, true);
+    for(auto pr: prime) {
+        int firstmultiple = (l/pr)*pr;
+        if(firstmultiple<l) {
+            firstmultiple += pr;
+        }
 
+        for(int j = max(firstmultiple,pr*pr); j<=r; j += pr) {
+            dummy[j-l] = false;
+        }
+    }
 
-    return 0;
+    for(int i = l; i<=r; i++) {
+        if(dummy[i-l]) cout << i << " ";
+    }
+    cout << endl;
+
 }
